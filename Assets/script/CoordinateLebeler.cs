@@ -16,7 +16,7 @@ public class CoordinateLebeler : MonoBehaviour
         wayPoint = GetComponentInParent<WayPoint>();
         label = GetComponent<TextMeshPro>();
         label.enabled = true;
-        DisplayCoordinates();
+        //DisplayCoordinates();
     }
     private void Update()
     {
@@ -28,7 +28,7 @@ public class CoordinateLebeler : MonoBehaviour
         }
         if (label == null)
             label = GetComponent<TextMeshPro>();
-        DisplayCoordinates();
+        //DisplayCoordinates();
         UpadateObjectName();
     }
     void ToggleLabel()
@@ -51,13 +51,13 @@ public class CoordinateLebeler : MonoBehaviour
         transform.parent.name = _coordenates.ToString();
     }
 
-    void DisplayCoordinates()
-    {
-        var position = transform.parent.position;
-        _coordenates.x = Mathf.RoundToInt(position.x/ EditorSnapSettings.move.x);
-        _coordenates.y = Mathf.RoundToInt(position.z / EditorSnapSettings.move.z);
+    //void DisplayCoordinates()
+    //{
+    //    var position = transform.parent.position;
+    //    _coordenates.x = Mathf.RoundToInt(position.x/ EditorSnapSettings.move.x);
+    //    _coordenates.y = Mathf.RoundToInt(position.z / EditorSnapSettings.move.z);
 
-        label.text = $"{ _coordenates.x}.{ _coordenates.y}";
-    }
+    //    label.text = $"{ _coordenates.x}.{ _coordenates.y}";
+    //}
 }
 
